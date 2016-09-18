@@ -6,8 +6,9 @@
 		<div class = "Jumbotron">
 			<div class = "container">
 				{% if businesses %}
+				<h1>Here are your Restuarant recommendations</h1>
 					{% for business in businesses %}
-								<h1>Here are your Restuarant Reccomendations</h1>
+								
 								<h2>Name: {{business.name}}</h2>
 								<h3>Rating: {{business.rating}}</h3>
 								<h3>Phone: {{business.phone}}</h3>
