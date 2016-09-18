@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class = "Jumbotron">
+			<div class = "container">
+				{% if businesses %}
+					{% for business in businesses %}
+								<h1>Here are your Restuarant Reccomendations</h1>
+								<h2>Name: {{business.name}}</h2>
+								<h3>Rating: {{business.rating}}</h3>
+								<h3>Phone: {{business.phone}}</h3>
+					{% endfor %}
+					
+					<a href="{{ url_for('index') }}">Search a New Address</a>
+
+				{% else %}
+					<h1>What is your Address?</h1>
+					<form action="/" class="form-inline">
+						<div class="form-group">
+							<input type="text" name="location" placeholder="City, State" class = "form-control">
+						</div>
+						<input type="Submit" value="Submit" class="btn btn-primary">
+					</form>
+				{% endif %}
+						
+				<a href="{{ url_for('about') }}">About this Project</a>
+			</div>
+		</div>
+	</body>
+</html>
